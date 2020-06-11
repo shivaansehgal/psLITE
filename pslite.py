@@ -73,20 +73,17 @@ def go(fn):
             break
 
 
-for fname in onlyfiles:
-    fn=fname[:-4]
-    print(fn)
-    filename='./input/'+fn+'.png'
-    imag=PIL.Image.open(filename)
-    imag.show()
-    inp=input()
-    if inp=='g':
-        im=cv2.imread(filename)
-        h, w, c = im.shape
-        win = GraphWin("pslite",w,h)
-        myImage = Image(Point(w/2,h/2), filename)
-        myImage.draw(win)
-        newImage=PIL.Image.new(mode="RGB",size=(w,h),color=(0,0,0))    
-        go(fn)
-    imag.close()
+filename='./input/'+fn+'.png'
+imag=PIL.Image.open(filename)
+imag.show()
+inp=input()
+if inp=='g':
+    im=cv2.imread(filename)
+    h, w, c = im.shape
+    win = GraphWin("pslite",w,h)
+    myImage = Image(Point(w/2,h/2), filename)
+    myImage.draw(win)
+    newImage=PIL.Image.new(mode="RGB",size=(w,h),color=(0,0,0))    
+    go(fn)
+imag.close()
     
