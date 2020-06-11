@@ -2,7 +2,6 @@ from PIL import Image,ImageDraw
 import PIL
 import time
 from graphics import *
-from player import minimax
 import cv2
 from tkinter import filedialog
 import numpy as np
